@@ -2,17 +2,15 @@
 let divs = document.getElementsByClassName('hole');
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
+let arr = Array.from(divs);
+let okCounter = 0;
+let ngCounter = 0;
 
-function checkMe() {
-
-    divs.forEach (function(item, i, divs){
-    okCounter = 0;
-    ngCounter = 0;
-    item = document.getElementById('hole1');
-    
-	if (item === divs.includes("hole_has-mole")){
+function checkMe(event) {
+      
+	if (event.target.classList.contains('hole_has-mole')){
         okCounter++;
-        dead.textContent = counter;
+        dead.textContent = okCounter;
     } else { 
         ngCounter++;
         lost.textContent = ngCounter;
@@ -24,11 +22,12 @@ function checkMe() {
 
     if (ngCounter === 5) {
         alert ("You've lost!")
-    }
-    });
+    };
 };
 
-divs.onclick = checkMe;
+arr.forEach( function(item, i, arr) { 
+    item.onclick = checkMe;
+});
 
 
 
