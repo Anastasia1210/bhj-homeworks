@@ -16,7 +16,7 @@ function checkMe(event) {
         lost.textContent = ngCounter;
     }
 
-    if (counter === 10) {
+    if (okCounter === 10) {
        alert ("Вы выиграли");
     };
 
