@@ -8,7 +8,7 @@ let start = Date.now();
       image.width = 300;
       counter++;
       let end = Date.now();
-      let speedCounter= (end - start) / 1000;
+      let speedCounter= (1 / ((end - start) / 1000)).toFixed(3);
     
       start = end;
       
