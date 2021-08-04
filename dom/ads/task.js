@@ -1,8 +1,8 @@
 const phrases = document.getElementsByClassName('rotator__case');
 
     setInterval(() => {
-      for (let i = 0; i < phrases.length; i++) {
-        phrases[i].classList.toggle('rotator__case_active')}
+      for (item of phrases) {
+        item.classList.toggle('rotator__case_active')}
     }, 1000);
     
 
