@@ -1,17 +1,19 @@
 document.getElementById("modal_main").className = "modal modal_active";
-const close = document.getElementsByClassName('modal__close');
-let arr = Array.from(close);
-const success = document.getElementsByClassName("show-success");
-let successArr = Array.from(success)
+const modal = document.getElementsByClassName("modal");
+const btn = document.getElementsByClassName("show-success");
+const crosses = document.querySelectorAll('.modal__close_times');
 
-
-arr[0].onclick = function() {
-    document.getElementById("modal_main").className = "modal";
+function closeWindow () {
+    modal[1].className = "modal modal_active";
+    modal[0].className = 'modal';    
 }
 
-successArr[0].onclick = function () {
-    document.getElementById("modal_success").className = "modal modal_active";
+crosses.forEach(button => {
+    button.addEventListener('click', () =>
+        button.closest('div[id]').className = 'modal'
+    ) 
+})      
+
+btn[0].onclick = function () {
+   closeWindow();
 }
-
-
-
