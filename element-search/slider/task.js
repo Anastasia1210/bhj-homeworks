@@ -1,12 +1,11 @@
-const prev = document.getElementsByClassName('slider__arrow slider__arrow_prev')
-const next = document.getElementsByClassName('slider__arrow slider__arrow_next')
+const prev = document.querySelector('.slider__arrow_prev')
+const next = document.querySelector('.slider__arrow_next')
 const slides = document.querySelectorAll('.slider__item')
 const dots = document.querySelectorAll('.slider__dot')
 
 let index = 0;
 
 const activeSlide = n => {
-    console.log(n);
     for(slide of slides){
         slide.classList.remove('slider__item_active')
     }
@@ -14,11 +13,10 @@ const activeSlide = n => {
 }
 
 const activeDot = n => {
-    console.log(n);
     for(dot of dots){
         dot.classList.remove('_active')
     }
-    dots[n].classList.add('_active');
+    dots[n].classList.toggle('_active');
 }
 
 const activeItems = ind => {
