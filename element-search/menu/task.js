@@ -1,17 +1,11 @@
-const links = document.getElementsByClassName("menu__link");
+const links = document.querySelectorAll('.menu__link');
 
+[...links].forEach(link=>link.addEventListener('click', linkClick,false));
 
-for (let i=0; i<links.length; i++) {
-    let parent = links[i].closest;
-    links[i].addEventListener('click', () => {
-      if (parent.classList.contains('menu menu_sub') ) {
-          parent.classList.add('menu_active')
-      } else {
-          return false;
-      }
-    });
-}
-
-
-
+function linkClick(){
+    
+   // for (i=0; i<links.length; i++) {
+        let item =this.parentNode.children[1];
+        item.className = 'menu menu_sub menu_active';
+    }
 
