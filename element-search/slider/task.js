@@ -14,9 +14,9 @@ const activeSlide = n => {
 
 const activeDot = n => {
     for(dot of dots){
-        dot.classList.remove('_active')
+        dot.classList.remove('slider__dot_active')
     }
-    dots[n].classList.toggle('_active');
+    dots[n].classList.toggle('slider__dot_active');
 }
 
 const activeItems = ind => {
@@ -26,22 +26,20 @@ const activeItems = ind => {
 
 const nextSlide = () => {
     if(index === slides.length - 1) {
-        index = 0;
-        activeItems(index);
+        index = 0; 
     } else {
-        index++;
-        activeItems(index);
+        index++;   
     }
+    activeItems(index);
 }
 
 const prevSlide = () => {
     if(index === 0) {
-        index = slides.length - 1;
-        activeItems(index);
+        index = slides.length - 1;   
     } else {
         index--;
-        activeItems(index);
     }
+    activeItems(index);
 }
 
 dots.forEach((item, indexDot) => {
