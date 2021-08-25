@@ -12,10 +12,12 @@ dropdownValue[i].addEventListener('click', () => {
 });
 }
 
-for (link of links) {
-    let b = link.parentElement.parentElement.parentElement.children[0];
-        link.addEventListener('click', () => {
-        b.textContent = link.textContent;
+for (let i=0; i < links.length; i ++) {
+    
+        links[i].addEventListener('click', (n) => {
+            let b = links[i].parentElement.parentElement.parentElement.children[0];
+            n.preventDefault();
+        b.textContent = links[i].textContent;
         })
         
 }
