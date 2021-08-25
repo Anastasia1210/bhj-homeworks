@@ -17,6 +17,14 @@ class Game {
   }
 
   registerEvents() {
+
+    let printResult = document.addEventListener('keydown', (event) => {
+      
+    if (this.currentSymbol.textContent === printResult) {
+      this.success();
+    } else {
+      this.fail();
+    }
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -24,7 +32,8 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
-  }
+  });
+}
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
