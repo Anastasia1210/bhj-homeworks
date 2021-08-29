@@ -1,6 +1,6 @@
 const redBtn = document.getElementsByClassName('chat-widget__side');
 const input = document.querySelector('.chat-widget__input');
-const messagesArr = Array.from(document.querySelectorAll('.chat-widget__messages'));
+const messagesArr = document.querySelector('.chat-widget__messages');
 const messages = Array.from(document.querySelectorAll('.message__text'));
 const time = Array.from(document.querySelectorAll('.message__time'));
 const customerMessages = messages[1];
@@ -27,14 +27,14 @@ input.addEventListener('keydown', function(event) {
 
 
 function messageEmptyOrNot (b) {
+    let time = new Date();
+    let timeStr = time.toLocaleDateString();
     if (b === ! '') {
-        customerMessages.innerHTML=b.target.value;
+        messagesArr.innerHTML += b + timeStr;
     } else {
         return false;
     }
-    console.log(customerMessages);
-    return customerMessages;
-    
+     
 }
 
 function robotReply (c) {
@@ -42,5 +42,6 @@ function robotReply (c) {
         randomRobotMessage = Math.floor(Math.random() * robotMessages.length);
         robotMessages = randomRobotMessage;
     }
+    return robotMessages;
 }
 //messages.oninput=(e)=>customerMessages.innerHTML=e.target.value;
