@@ -68,25 +68,19 @@ class Autocomplete {
   }
 
   getMatches( text ) {
-    let index = this.input.options.selectedIndex;
-    let txt = this.input.options[index].text;
-    let val = this.input.options[index].value;
-   
-    let arr = [{name: txt, value: val}];
-    
-    this.input.addEventListener('change', () => {
-      
-     arr[index].name.push(text.option);
-     arr[index].value.push(text.value);
-     return arr;
-    })
-   
-   // return  arr[
-   //   {
-   //     text: 'Чубакка',
-   //     value: '1'
-   //  }
-   //];
+     let arr = Array.from(this.list);
+     arr.obj = {};
+     let index = 0;
+     for (let i = 0; i < this.input.options; i++) {
+       if (this.input.options[i].innerHTML === text) {
+         arr.obj['text'] = text;
+         arr.obj['value'] = this.input.options[i].index;
+        index ++; 
+       }
+       
+     }
+       
+   return  arr;
   }
 }
 
