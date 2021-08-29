@@ -18,6 +18,7 @@ for (let i=0; i < links.length; i ++) {
             let b = links[i].parentElement.parentElement.parentElement.children[0];
             n.preventDefault();
         b.textContent = links[i].textContent;
+        links[i].parentElement.parentElement.className = 'dropdown__list';
         })
         
 }
