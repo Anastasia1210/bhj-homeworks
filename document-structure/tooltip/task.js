@@ -11,7 +11,7 @@ items.forEach(item => {
        // console.log(tooltip.className);
         tooltip.innerText = item.title;
        // console.log (tooltip.innerText);
-        item.insertAdjacentHTML("afterEnd", tooltip);
+        item.appendChild(tooltip);
         
     })
 });
